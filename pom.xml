@@ -1,0 +1,12 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>pl.github.JakubTuminski</groupId>
+    <artifactId>movie-chooser</artifactId>
+    <version>0.0.1</version>
+
+    <properties>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+    </properties>
+
+</project>
