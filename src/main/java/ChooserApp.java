@@ -2,6 +2,8 @@ import dao.MovieDao;
 import model.Movie;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -35,10 +37,10 @@ public class ChooserApp {
                     addMovie();
                     break;
                 case '3':
-                    //TODO
+                    showList();
                     break;
                 case '4':
-                    //TODO
+                    showRandomMovie();
                     break;
                 case '5':
                     System.out.println("Closing down the application, see you later");
@@ -55,9 +57,10 @@ public class ChooserApp {
         String title = scanner.next();
         MovieClient movieClient = new MovieClient();
         System.out.println(movieClient.findMovie(title));
+
     }
 
-    public void addMovie() throws IOException {
+    public void addMovie() throws IOException, InterruptedException {
         System.out.println("Enter the id of the movie you want to add");
         Scanner scanner = new Scanner(System.in);
         String id = scanner.next();
@@ -65,6 +68,29 @@ public class ChooserApp {
         Movie movie = movieClient.findMovieById(id);
         MovieDao movieDao = new MovieDao();
         movieDao.create(movie);
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("\n \n Select what you want to do next from the menu.");
+    }
 
+    public void showList() throws InterruptedException {
+        System.out.println("This is a list of movies added by you:");
+        MovieDao movieDao = new MovieDao();
+        List<Movie> movieList = movieDao.findAll();
+        for (int i = 0; i < movieList.size(); i++) {
+            System.out.println(i + " - " + movieList.get(i).title + ", year: " + movieList.get(i).year + ", imDb rating: " + movieList.get(i).imDbRating);
+        }
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("\n \n Select what you want to do next from the menu.");
+    }
+
+    public void showRandomMovie() throws InterruptedException {
+        System.out.println("This is a random movie chosen from your list:");
+        MovieDao movieDao = new MovieDao();
+        List<Movie> movieList = movieDao.findAll();
+        Random random = new Random();
+        int index = random.nextInt(movieList.size());
+        System.out.println(movieList.get(index).title + ", year: " + movieList.get(index).year + ", imDb rating: " + movieList.get(index).imDbRating);
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("\n \n Select what you want to do next from the menu.");
     }
 }
