@@ -1,3 +1,5 @@
+package model;
+
 public class SearchResult {
     public String id;
     public String resultType;
@@ -6,7 +8,7 @@ public class SearchResult {
 
     @Override
     public String toString() {
-        return "SearchResult{" +
+        return "model.SearchResult{" +
                 "id='" + id + '\'' +
                 ", resultType='" + resultType + '\'' +
                 ", title='" + title + '\'' +

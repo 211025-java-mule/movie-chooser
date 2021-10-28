@@ -1,3 +1,5 @@
+package model;
+
 import java.util.List;
 
 public class Search {
@@ -7,7 +9,7 @@ public class Search {
 
     @Override
     public String toString() {
-        return "Search{" +
+        return "model.Search{" +
                 "searchType='" + searchType + '\'' +
                 ", expression='" + expression + '\'' +
                 ", results=" + results +
