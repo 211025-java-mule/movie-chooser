@@ -42,14 +42,28 @@ public class MovieClient {
         return search.toString();
     }
 
-    public Movie findMovieById(String id) throws IOException {
+    public Movie findMovieById(String id) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        URL url = new URL("https://imdb-api.com/en/API/Title/" + API_KEY + "/" + id);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        InputStream inputStream = connection.getInputStream();
-        String body = new String(inputStream.readAllBytes());
-        Movie movie = objectMapper.readValue(body, Movie.class);
+
+        URL url = null;
+        try {
+            url = new URL("https://imdb-api.com/en/API/Title/" + API_KEY + "/" + id);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        HttpURLConnection connection = null;
+        Movie movie = new Movie();
+        try {
+            connection = (HttpURLConnection) url.openConnection();
+            InputStream inputStream = connection.getInputStream();
+            String body = new String(inputStream.readAllBytes());
+            movie = objectMapper.readValue(body, Movie.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return movie;
     }
 }
