@@ -24,7 +24,7 @@ public class MovieClient {
         try {
             url = new URL("https://imdb-api.com/en/API/SearchMovie/" + API_KEY + "/" + title);
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            logger.error(e.toString());
         }
 
         HttpURLConnection connection = null;
@@ -36,7 +36,7 @@ public class MovieClient {
             String body = new String(inputStream.readAllBytes());
             search = objectMapper.readValue(body, Search.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.toString());
         }
 
         return search.toString();
@@ -50,7 +50,7 @@ public class MovieClient {
         try {
             url = new URL("https://imdb-api.com/en/API/Title/" + API_KEY + "/" + id);
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            logger.error(e.toString());
         }
 
         HttpURLConnection connection = null;
@@ -61,7 +61,7 @@ public class MovieClient {
             String body = new String(inputStream.readAllBytes());
             movie = objectMapper.readValue(body, Movie.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.toString());
         }
 
         return movie;

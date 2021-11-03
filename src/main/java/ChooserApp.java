@@ -1,5 +1,7 @@
 import dao.MovieDao;
 import model.Movie;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Random;
@@ -8,11 +10,13 @@ import java.util.concurrent.TimeUnit;
 
 
 public class ChooserApp {
+    static Logger logger = LoggerFactory.getLogger(MovieClient.class.getName());
+
     public static void main(String[] args) {
         try {
             userInterface();
-        } catch (InterruptedException exception) {
-            exception.printStackTrace();
+        } catch (InterruptedException e) {
+            logger.error(e.toString());
         }
     }
 
@@ -20,8 +24,8 @@ public class ChooserApp {
         System.out.println("Welcome to Movie Chooser!");
         try {
             TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException exception) {
-            exception.printStackTrace();
+        } catch (InterruptedException e) {
+            logger.error(e.toString());
         }
         System.out.println("What do you want to do?");
         Scanner scanner = new Scanner(System.in);
