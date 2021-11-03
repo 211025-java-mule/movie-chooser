@@ -54,10 +54,9 @@ public class ChooserApp {
     public void findMovieByTitle() throws IOException {
         System.out.println("Enter a movie title");
         Scanner scanner = new Scanner(System.in);
-        String title = scanner.next();
+        String title = scanner.nextLine();
         MovieClient movieClient = new MovieClient();
-        System.out.println(movieClient.findMovie(title));
-
+        System.out.println("List of found movies: \n" + movieClient.findMovieByTitle(title));
     }
 
     public void addMovie() throws IOException, InterruptedException {
