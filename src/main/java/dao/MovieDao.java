@@ -1,6 +1,8 @@
 package dao;
 
 import model.Movie;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utils.DbUtil;
 
 import java.sql.Connection;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieDao {
+    Logger logger = LoggerFactory.getLogger(MovieDao.class.getName());
     private static final String CREATE_MOVIE_QUERY = "INSERT INTO movie(id,title,year,imDbRating) VALUES (?,?,?,?);";
     private static final String FIND_ALL_MOVIES_QUERY = "SELECT * FROM movie ORDER BY imDbRating DESC;";
 
@@ -26,7 +29,7 @@ public class MovieDao {
                 System.out.println("The given movie has been added to the list.");;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.toString());
         }
         return null;
     }
@@ -45,7 +48,7 @@ public class MovieDao {
                 movieList.add(movieToAdd);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+                logger.error(e.toString());
         }
             return movieList;
     }

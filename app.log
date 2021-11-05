@@ -1,1 +1,34 @@
 
+2021-11-05 15:08:47,076 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 15
+2021-11-05 15:13:29,061 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 13
+2021-11-05 15:13:49,991 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 15
+2021-11-05 15:16:45,350 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 15
+2021-11-05 15:17:59,638 ERROR ChooserApp.main() dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 15
+2021-11-05 15:18:21,465 ERROR ChooserApp.main() dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 13
+2021-11-05 15:26:26,377 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 15
+2021-11-05 15:32:47,059 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "postgres.movie" does not exist
+  Pozycja: 15
+2021-11-05 15:42:52,148 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "public.movie" does not exist
+  Pozycja: 15
+2021-11-05 15:43:03,965 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "public.movie" does not exist
+  Pozycja: 15
+2021-11-05 15:43:16,209 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "public.movie" does not exist
+  Pozycja: 15
+2021-11-05 15:43:42,450 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 13
+2021-11-05 15:43:46,520 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "public.movie" does not exist
+  Pozycja: 15
+2021-11-05 15:45:34,948 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-05 15:49:12,184 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "public.movie" does not exist
+  Pozycja: 15
+2021-11-05 15:58:58,996 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-05 15:59:26,807 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-05 16:01:58,911 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: ERROR: relation "movie" does not exist
+  Pozycja: 13

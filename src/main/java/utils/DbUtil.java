@@ -7,10 +7,16 @@ import java.sql.SQLException;
 public class DbUtil {
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/movies?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true",
-                "root",
-                "coderslab"
-        );
+
+////mySQL connection
+//        return DriverManager.getConnection(
+//                "jdbc:mysql://localhost:3306/movies?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true",
+//                "root",
+//                "coderslab");
+
+//postgreSQL connection
+        return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+                "postgres",
+                "postgres");
     }
 }

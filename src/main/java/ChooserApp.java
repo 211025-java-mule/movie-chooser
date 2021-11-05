@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class ChooserApp {
-    static Logger logger = LoggerFactory.getLogger(MovieClient.class.getName());
+    static Logger logger = LoggerFactory.getLogger(ChooserApp.class.getName());
 
     public static void main(String[] args) {
         try {
