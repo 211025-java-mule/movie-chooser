@@ -17,6 +17,7 @@ public class MovieDao {
     private static final String CREATE_MOVIE_QUERY = "INSERT INTO movie(id,title,year,imDbRating) VALUES (?,?,?,?);";
     private static final String FIND_ALL_MOVIES_QUERY = "SELECT * FROM movie ORDER BY imDbRating DESC;";
 
+    //creates a new entry in the movie table based on the received object
     public Movie create(Movie movie){
         try (Connection connection = DbUtil.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_MOVIE_QUERY);
@@ -34,6 +35,7 @@ public class MovieDao {
         return null;
     }
 
+    //finds and returns a list of all movies
     public List<Movie> findAll(){
         List<Movie> movieList = new ArrayList<>();
             try (Connection connection = DbUtil.getConnection()) {

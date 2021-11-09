@@ -17,6 +17,7 @@ public class MovieClient {
     private static final String API_KEY = "k_21xe62oi";
     Logger logger = LoggerFactory.getLogger(MovieClient.class.getName());
 
+    //finds a list of movies from the IMDb API based on the given title and returns it as a Search object
     public Search findMoviesByTitle(String title) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -43,6 +44,7 @@ public class MovieClient {
         return search;
     }
 
+    //finds a movie from the IMDb API based on the given ID and returns it as a Movie object
     public Movie findMovieById(String id) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

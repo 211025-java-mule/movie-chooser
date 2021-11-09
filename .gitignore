@@ -5,3 +5,5 @@
 target/
 .idea
 .app.log
+tomcat.8082/
+movie-chooser.im

@@ -24,6 +24,7 @@ public class ChooserApp {
         }
     }
 
+    //application interface, displays available options and assigns actions to them
     static void userInterface() throws InterruptedException {
         System.out.println("Welcome to Movie Chooser!");
         try {
@@ -62,6 +63,7 @@ public class ChooserApp {
         } while (true);
     }
 
+    //finds movies by the title entered on the terminal and prints them
     static void findMovieByTitle() throws InterruptedException {
         System.out.println("Enter a movie title");
         Scanner scanner = new Scanner(System.in);
@@ -72,6 +74,7 @@ public class ChooserApp {
         System.out.println("\n Select what you want to do next from the menu.");
     }
 
+    //adds a movie to the database based on the id entered in the terminal
     static void addMovie() throws InterruptedException {
         System.out.println("Enter the id of the movie you want to add");
         Scanner scanner = new Scanner(System.in);
@@ -88,6 +91,7 @@ public class ChooserApp {
         System.out.println("\nSelect what you want to do next from the menu.");
     }
 
+    //displays the list of movies stored in the database
     static void showList() throws InterruptedException {
         System.out.println("This is a list of movies added by you:");
         MovieDao movieDao = new MovieDao();
@@ -99,6 +103,7 @@ public class ChooserApp {
         System.out.println("\n Select what you want to do next from the menu.");
     }
 
+    //displays a random movie from the list stored in the database
     static void showRandomMovie() throws InterruptedException {
         System.out.println("This is a random movie chosen from your list:");
         MovieDao movieDao = new MovieDao();
