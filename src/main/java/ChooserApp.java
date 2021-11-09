@@ -1,7 +1,9 @@
+import client.MovieClient;
 import dao.MovieDao;
 import model.Movie;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.TomcatUtil;
 
 import java.util.List;
 import java.util.Random;
@@ -10,9 +12,11 @@ import java.util.concurrent.TimeUnit;
 
 
 public class ChooserApp {
+
     static Logger logger = LoggerFactory.getLogger(ChooserApp.class.getName());
 
     public static void main(String[] args) {
+
         try {
             userInterface();
         } catch (InterruptedException e) {
@@ -33,7 +37,8 @@ public class ChooserApp {
                 + "2 - Add movie to your list by ID\n"
                 + "3 - Show your list ordered by ratings\n"
                 + "4 - Show random movie form your list\n"
-                + "5 - Close application";
+                + "5 - Run the web application\n"
+                + "6 - Close application";
 
         char response;
         do {
@@ -45,6 +50,10 @@ public class ChooserApp {
                 case '3' -> showList();
                 case '4' -> showRandomMovie();
                 case '5' -> {
+                    TomcatUtil tomcatUtil = new TomcatUtil();
+                    tomcatUtil.runTomcatServer();
+                }
+                case '6' -> {
                     System.out.println("Closing down the application, see you later.");
                     System.exit(0);
                 }
@@ -58,7 +67,7 @@ public class ChooserApp {
         Scanner scanner = new Scanner(System.in);
         String title = scanner.nextLine();
         MovieClient movieClient = new MovieClient();
-        System.out.println("List of found movies: \n" + movieClient.findMovieByTitle(title));
+        System.out.println("List of found movies: \n" + movieClient.findMoviesByTitle(title).toString());
         TimeUnit.SECONDS.sleep(2);
         System.out.println("\n Select what you want to do next from the menu.");
     }

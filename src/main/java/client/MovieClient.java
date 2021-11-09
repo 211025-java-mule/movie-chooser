@@ -1,3 +1,5 @@
+package client;
+
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Movie;
@@ -11,12 +13,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
 public class MovieClient {
     private static final String API_KEY = "k_21xe62oi";
     Logger logger = LoggerFactory.getLogger(MovieClient.class.getName());
 
-    public String findMovieByTitle(String title) {
+    public Search findMoviesByTitle(String title) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -39,7 +40,7 @@ public class MovieClient {
             logger.error(e.toString());
         }
 
-        return search.toString();
+        return search;
     }
 
     public Movie findMovieById(String id) {
@@ -63,7 +64,6 @@ public class MovieClient {
         } catch (IOException e) {
             logger.error(e.toString());
         }
-
         return movie;
     }
 }
