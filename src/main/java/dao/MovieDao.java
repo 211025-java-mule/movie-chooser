@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MovieDao {
     Logger logger = LoggerFactory.getLogger(MovieDao.class.getName());
-    private static final String CREATE_MOVIE_QUERY = "INSERT INTO movie(id,title,year,imDbRating) VALUES (?,?,?,?);";
+    private static final String CREATE_MOVIE_QUERY = "INSERT INTO movie(id,title,year,imDbRating,plot) VALUES (?,?,?,?,?);";
     private static final String FIND_ALL_MOVIES_QUERY = "SELECT * FROM movie ORDER BY imDbRating DESC;";
 
     //creates a new entry in the movie table based on the received object
@@ -25,6 +25,7 @@ public class MovieDao {
             preparedStatement.setString(2, movie.title);
             preparedStatement.setString(3, movie.year);
             preparedStatement.setString(4, movie.imDbRating);
+            preparedStatement.setString(5, movie.plot);
             int result = preparedStatement.executeUpdate();
             if (result == 1) {
                 System.out.println("The given movie has been added to the list.");;
@@ -47,6 +48,7 @@ public class MovieDao {
                 movieToAdd.setTitle(resultSet.getString("title"));
                 movieToAdd.setYear(resultSet.getString("year"));
                 movieToAdd.setImDbRating(resultSet.getString("imDbRating"));
+                movieToAdd.setPlot(resultSet.getString("plot"));
                 movieList.add(movieToAdd);
             }
         } catch (SQLException e) {

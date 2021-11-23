@@ -3,5 +3,6 @@ create table if not exists movie(
     id varchar,
     title varchar,
     year varchar(10),
-    imDbRating varchar(10)
+    imDbRating varchar(10),
+    plot varchar
 )

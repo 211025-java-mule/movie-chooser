@@ -1,6 +1,7 @@
 package utils;
 
 import client.MovieClient;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.MovieDao;
 import model.Movie;
 import org.apache.catalina.LifecycleException;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Random;
 
@@ -84,6 +86,22 @@ public class TomcatUtil {
                 getServletContext().getRequestDispatcher("/randomMovie.jsp").forward(request,response);
             }
         }).addMapping("/showRandomMovie");
+
+        //Return movie list with descriptions as a JSON
+        tomcat.addServlet("", "myMovies", new HttpServlet() {
+            @Override
+            protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+                ObjectMapper objectMapper = new ObjectMapper();
+                List<Movie> movieList = movieDao.findAll();
+                String moviesAsJsonString = objectMapper.writeValueAsString(movieList);
+
+                PrintWriter out = resp.getWriter();
+                resp.setContentType("application/json");
+                resp.setCharacterEncoding("UTF-8");
+                out.println(moviesAsJsonString);
+                out.flush();
+            }
+        }).addMapping("/myMovies");
 
         try {
             tomcat.start();

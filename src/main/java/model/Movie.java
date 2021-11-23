@@ -8,5 +8,5 @@ public class Movie {
     public String title;
     public String year;
     public String imDbRating;
-
+    public String plot;
 }

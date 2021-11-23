@@ -38,3 +38,7 @@
 2021-11-09 20:12:21,329 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 2021-11-09 20:12:27,643 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 2021-11-09 20:13:06,520 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-12 13:18:59,820 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-12 13:19:59,334 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-12 13:20:06,794 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-12 13:20:24,447 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
