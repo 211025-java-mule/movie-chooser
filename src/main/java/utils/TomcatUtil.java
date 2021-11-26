@@ -99,6 +99,7 @@ public class TomcatUtil {
                 resp.setContentType("application/json");
                 resp.setCharacterEncoding("UTF-8");
                 out.println(moviesAsJsonString);
+//                out.println(objectMapper.writeValueAsString(movieList.get(1)));
                 out.flush();
             }
         }).addMapping("/myMovies");

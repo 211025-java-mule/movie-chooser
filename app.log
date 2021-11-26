@@ -42,3 +42,4 @@
 2021-11-12 13:19:59,334 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 2021-11-12 13:20:06,794 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 2021-11-12 13:20:24,447 ERROR main dao.MovieDao - org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2021-11-26 13:33:49,152 ERROR http-nio-8082-exec-7 client.MovieClient - java.io.IOException: Server returned HTTP response code: 524 for URL: https://imdb-api.com/en/API/Title/k_21xe62oi/tt0133093

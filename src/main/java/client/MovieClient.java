@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MovieClient {
-    private static final String API_KEY = "k_21xe62oi";
+    private static final String API_KEY = System.getenv("api_key");
     Logger logger = LoggerFactory.getLogger(MovieClient.class.getName());
 
     //finds a list of movies from the IMDb API based on the given title and returns it as a Search object
